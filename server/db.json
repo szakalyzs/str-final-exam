@@ -57,13 +57,6 @@
       "active": true
     },
     {
-      "id": 12,
-      "name": "Gawain McKillop",
-      "email": "gmckillopb@geocities.jp",
-      "address": "0 School Way",
-      "active": false
-    },
-    {
       "id": 13,
       "name": "Kalinda Antonik",
       "email": "kantonikc@chronoengine.com",
@@ -684,6 +677,13 @@
       "name": "Bud Spencer",
       "email": "buddy@hotmail.com",
       "address": "25 Longstreet",
+      "active": true
+    },
+    {
+      "id": 102,
+      "name": "Terence Hill",
+      "email": "terry@gmail.com",
+      "address": "54665 Miami",
       "active": true
     }
   ]

@@ -13,6 +13,7 @@ export class UserListComponent implements OnInit {
   //users$: Observable<User[]> = this.userService.getAll();
   users$: BehaviorSubject<User[]> = this.userService.list$;
   phrase: string = '';
+  sortby: string = '';
 
   constructor(
     private userService: UserService,
@@ -24,6 +25,10 @@ export class UserListComponent implements OnInit {
 
   onChangePhrase(event: Event): void {
     this.phrase = (event.target as HTMLInputElement).value;
+  }
+
+  setOrder(key: string): void {
+    this.sortby = key;
   }
 
   onDelete(user: User): void {

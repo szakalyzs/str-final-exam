@@ -23,16 +23,16 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Active</th>
+            <th (click)="setOrder('id')">#</th>
+            <th (click)="setOrder('name')">Name</th>
+            <th (click)="setOrder('email')">Email</th>
+            <th (click)="setOrder('address')">Address</th>
+            <th (click)="setOrder('active')">Active</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let user of users$ | async | filter:phrase:'name'">
+          <tr *ngFor="let user of users$ | async | filter:phrase:'name' | sorter:sortby:1">
             <td>{{ user.id }}</td>
             <td>{{ user.name }}</td>
             <td>{{ user.email }}</td>
