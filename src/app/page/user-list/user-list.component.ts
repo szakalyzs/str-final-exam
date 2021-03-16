@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/service/user.service';
 
@@ -10,13 +10,26 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class UserListComponent implements OnInit {
 
-  users$: Observable<User[]> = this.userService.getAll();
+  //users$: Observable<User[]> = this.userService.getAll();
+  users$: BehaviorSubject<User[]> = this.userService.list$;
+  phrase: string = '';
 
   constructor(
     private userService: UserService,
   ) { }
 
   ngOnInit(): void {
+    this.userService.getAll();
+  }
+
+  onChangePhrase(event: Event): void {
+    this.phrase = (event.target as HTMLInputElement).value;
+  }
+
+  onDelete(user: User): void {
+    if (confirm(`Are you sure to delete ${user.name}?`)) {
+      this.userService.remove(user);
+    }
   }
 
 }
