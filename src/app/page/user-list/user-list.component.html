@@ -1,49 +1,55 @@
 <div class="row">
-<div class="col-4 offset-8">
-  <form class="navbar-form">
-    <div class="input-group no-border">
-      <input (keyup)="onChangePhrase($event)" type="text" value="" class="form-control" placeholder="Filter by Name...">
-    </div>
-  </form>
-</div>
-</div>
-
-<div class="row">
-  <div class="col-12 mt-2">
+  <div class="col-8 mt-2">
     <h2>User List</h2>
-    <button [routerLink]="['user/' + 0]" class="btn btn-block btn-success">
-      <i class="fa fa-plus"></i>
-    </button>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Address</th>
-          <th>Active</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let user of users$ | async | filter:phrase:'name'">
-          <td>{{ user.id }}</td>
-          <td>{{ user.name }}</td>
-          <td>{{ user.email }}</td>
-          <td>{{ user.address }}</td>
-          <td>{{ user.active }}</td>
-          <td>
-            <div class="btn-group">
-              <button [routerLink]="['user/' + user.id]" class="btn btn-info">
-                <i class="fa fa-pencil"></i>
-              </button>
-              <button (click)="onDelete(user)"class="btn btn-danger">
-                <i class="fa fa-trash"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
   </div>
-</div>
+  <div class="col-4 mt-2">
+    <form class="navbar-form">
+      <div class="input-group no-border">
+        <input (keyup)="onChangePhrase($event)" type="text" value="" class="form-control"
+          placeholder="Filter by Name...">
+      </div>
+    </form>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mt-2">
+      <button [routerLink]="['user/' + 0]" class="btn btn-block btn-success">
+        <i class="fa fa-plus"></i>
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Active</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users$ | async | filter:phrase:'name'">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.address }}</td>
+            <td>{{ user.active }}</td>
+            <td>
+              <div class="btn-group">
+                <button [routerLink]="['user/' + user.id]" class="btn btn-info">
+                  <i class="fa fa-pencil"></i>
+                </button>
+                <button (click)="onDelete(user)" class="btn btn-danger">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
