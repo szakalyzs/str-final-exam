@@ -9,8 +9,8 @@
     },
     {
       "id": 2,
-      "name": "Granville Taplin",
-      "email": "gtaplin1@vk.com",
+      "name": "Granville Chaplin",
+      "email": "chaplin1@vk.com",
       "address": "274 Jenna Center",
       "active": true
     },
@@ -678,6 +678,13 @@
       "email": "mcosbee2r@go.com",
       "address": "0642 Spaight Junction",
       "active": false
+    },
+    {
+      "id": 101,
+      "name": "Bud Spencer",
+      "email": "buddy@hotmail.com",
+      "address": "25 Longstreet",
+      "active": true
     }
   ]
 }
